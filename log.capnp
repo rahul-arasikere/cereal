@@ -133,6 +133,7 @@ struct FrameData {
   gain @15 :Float32; # This includes highConversionGain if enabled
   measuredGreyFraction @21 :Float32;
   targetGreyFraction @22 :Float32;
+  paperTimestampTracking @23 :UInt64;
 
   # Focus
   lensPos @11 :Int32;
@@ -714,6 +715,7 @@ struct ModelDataV2 {
   leadsV3 @18 :List(LeadDataV3);
 
   meta @12 :MetaData;
+  paperTimestampTracking @20 :UInt64;
 
   # All SI units and in device frame
   struct XYZTData {
@@ -828,7 +830,7 @@ struct LongitudinalPlan @0xe00b5b3eba12876c {
   jerks @34 :List(Float32);
 
   solverExecutionTime @35 :Float32;
-
+  paperTimestampTracking @36: UInt64;
   enum LongitudinalPlanSource {
     cruise @0;
     lead0 @1;
@@ -891,6 +893,8 @@ struct LateralPlan @0xe1e9318e2ae8b51e {
   curvatureRates @28 :List(Float32);
 
   solverExecutionTime @30 :Float32;
+  paperTimestampTracking @31 :UInt64;
+
 
   enum Desire {
     none @0;
